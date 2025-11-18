@@ -1,0 +1,5 @@
+![Portada del disco Plandemia](https://github.com/user-attachments/assets/2bf3fa68-7f96-47df-ac00-3884751df350)
+![Tapa del CD Plandemiados](https://github.com/user-attachments/assets/e581ffe9-984c-4229-9f26-102650421708)
+![Tapa del CD Guitar percussion](https://github.com/user-attachments/assets/a9d6428a-a479-4f87-8c97-468bdd3f69ec)
+![Tapa de disco el Deseo para Fresh tunes](https://github.com/user-attachments/assets/c7cf1f2d-c3b1-4dfd-8790-f099f1e61559)
+![Tapa de Cd para Spotify Boli bol](https://github.com/user-attachments/assets/3e49060c-d8fb-45d7-9e50-601ae634c2f9)
