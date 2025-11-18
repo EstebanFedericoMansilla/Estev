@@ -220,6 +220,33 @@
             display: none;
         }
 
+        /* Botón pequeño y ligero en la navegación (círculo) */
+        .nav-download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #ff416c 0%, #ff7a18 100%);
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255,75,43,0.14);
+            transition: transform 140ms ease, box-shadow 140ms ease;
+            margin-left: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .nav-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255,75,43,0.18);
+        }
+
+        /* Mobile: mostrar botón en el menú móvil como enlace normal */
+        @media (max-width: 768px) {
+            .nav-download-btn { display: none; }
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -245,10 +272,14 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="desktop-menu hidden md:block space-x-6">
+            <div class="desktop-menu hidden md:flex items-center space-x-4">
                 <a href="#bio" class="hover:text-gray-300 transition-colors">Biografía</a>
                 <a href="#albums" class="hover:text-gray-300 transition-colors">Música</a>
                 <a href="#contact" class="hover:text-gray-300 transition-colors">Contacto</a>
+                <!-- Botón circular ligero para descarga (desktop) -->
+                <a id="navDownload" href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="nav-download-btn" aria-label="Descargar App de Estev" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-download" style="font-size:16px"></i>
+                </a>
             </div>
         </div>
     </nav>
@@ -258,6 +289,7 @@
         <a href="#bio" class="text-xl my-4" onclick="toggleMobileMenu()">Biografía</a>
         <a href="#albums" class="text-xl my-4" onclick="toggleMobileMenu()">Música</a>
         <a href="#contact" class="text-xl my-4" onclick="toggleMobileMenu()">Contacto</a>
+        <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
         <button class="absolute top-4 right-4 text-2xl" onclick="toggleMobileMenu()">
             <i class="fas fa-times"></i>
         </button>
@@ -269,6 +301,7 @@
         <header class="text-center mb-16">
             <h1 class="text-4xl md:text-5xl font-bold">[ESTEV]</h1>
             <p class="text-lg md:text-xl text-gray-400">Música que inspira</p>
+            <!-- (Se eliminó el botón azul para evitar cubrir la lista de temas) -->
         </header>
 
         <!-- Biography Section -->
@@ -383,6 +416,8 @@
         </div>
         <audio id="audio" preload="metadata"></audio>
     </div>
+
+    <!-- La pestaña lateral fue movida al nav para no tapar la lista de temas -->
 
     <script>
         // Mobile menu functionality
