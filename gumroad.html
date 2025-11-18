@@ -19,10 +19,16 @@
         .track{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid #151515}
         .note{color:#ccc;font-size:14px;margin-top:8px}
         footer{color:#888;margin-top:26px;font-size:13px}
-        .small{font-size:13px;color:#bbb}
-        .gift{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-        .gift .gift-btn{background:#0b84ff;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:600}
-        .gift strong{color:#ffd; margin-right:6px}
+         .small{font-size:13px;color:#bbb}
+         .gift{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+         .gift .gift-btn{background:#0b84ff;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none;font-weight:600}
+         .gift strong{color:#ffd; margin-right:6px}
+        .share-section{margin-top:24px;padding-top:16px;border-top:1px solid #222;text-align:center}
+        .share-section h4{font-size:14px;margin-bottom:12px;color:#bbb}
+        .share-buttons{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+        .share-buttons button{background:linear-gradient(135deg,#0084ff,#0055dd);color:#fff;padding:6px 10px;border:0;border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;transition:transform 140ms ease}
+        .share-buttons button:hover{transform:translateY(-2px)}
+        .share-buttons button.github{background:linear-gradient(135deg,#333,#1a1a1a)}
     </style>
 </head>
 <body>
@@ -180,6 +186,19 @@
 
         <footer>
             <div class="small">Página ligera — enlaces directos a Gumroad.</div>
+
+            <!-- Sección de compartir enlaces -->
+            <div class="share-section">
+                <h4>Comparte estos enlaces</h4>
+                <div class="share-buttons">
+                    <button type="button" onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)">
+                        <i class="fas fa-download" style="margin-right:6px"></i>Copiar App
+                    </button>
+                    <button type="button" class="github" onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)">
+                        <i class="fas fa-link" style="margin-right:6px"></i>Copiar Web
+                    </button>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -259,7 +278,3 @@
             }
         }
     </script>
-
-
-
-    
