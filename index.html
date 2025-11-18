@@ -247,6 +247,48 @@
             .nav-download-btn { display: none; }
         }
 
+        /* Sección de compartir enlaces */
+        .share-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .share-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .share-btn {
+            background: linear-gradient(135deg, #0084ff 0%, #0055dd 100%);
+            color: #fff;
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 140ms ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-btn.github {
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -254,6 +296,14 @@
 
             .desktop-menu {
                 display: none;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+            }
+
+            .share-btn {
+                width: 100%;
             }
         }
     </style>
@@ -290,6 +340,7 @@
         <a href="#bio" class="text-xl my-4" onclick="toggleMobileMenu()">Biografía</a>
         <a href="#albums" class="text-xl my-4" onclick="toggleMobileMenu()">Música</a>
         <a href="#contact" class="text-xl my-4" onclick="toggleMobileMenu()">Contacto</a>
+        <a href="gumroad.html" class="text-xl my-4" onclick="toggleMobileMenu()">Tienda</a>
         <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
         <button class="absolute top-4 right-4 text-2xl" onclick="toggleMobileMenu()">
             <i class="fas fa-times"></i>
@@ -396,6 +447,19 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
+
+            <!-- Sección de compartir enlaces (Mediafire + GitHub) -->
+            <div class="share-section">
+                <h3>Comparte estos enlaces</h3>
+                <div class="share-buttons">
+                    <button type="button" class="share-btn" onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)">
+                        <i class="fas fa-download" style="margin-right:6px"></i>Copiar App (Mediafire)
+                    </button>
+                    <button type="button" class="share-btn github" onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)">
+                        <i class="fas fa-link" style="margin-right:6px"></i>Copiar Web (GitHub)
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -421,6 +485,42 @@
     <!-- La pestaña lateral fue movida al nav para no tapar la lista de temas -->
 
     <script>
+        // Función para copiar al portapapeles (reutilizada de gumroad.html)
+        async function copyToClipboard(text, btn){
+            const original = btn.textContent;
+            try{
+                if(navigator.clipboard && navigator.clipboard.writeText){
+                    await navigator.clipboard.writeText(text);
+                    btn.textContent = '✓ Copiado';
+                    setTimeout(()=> btn.textContent = original, 1600);
+                    return;
+                }
+            }catch(e){ }
+
+            // Fallback: usar textarea temporal + execCommand('copy')
+            try{
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                const ok = document.execCommand('copy');
+                document.body.removeChild(ta);
+                if(ok){
+                    btn.textContent = '✓ Copiado';
+                    setTimeout(()=> btn.textContent = original, 1600);
+                    return;
+                }
+            }catch(e){ }
+
+            // Último recurso: mostrar prompt con el enlace para copiar manualmente
+            try{ prompt('Copia este enlace y pégalo:', text); }
+            catch(e){ window.open(text, '_blank'); }
+            btn.textContent = original;
+        }
+
         // Mobile menu functionality
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
