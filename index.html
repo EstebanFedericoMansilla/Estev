@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +47,17 @@
         }
 
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Mobile Navigation */
@@ -100,11 +109,16 @@
         /* Solución para visualización en modo vertical en móviles */
         @media (max-width: 480px) and (orientation: portrait) {
             .album-image {
-                height: auto; /* Altura automática basada en el contenido */
-                max-height: 300px; /* Altura máxima para evitar que sea demasiado grande */
-                object-fit: contain; /* Asegura que toda la imagen sea visible */
-                background-color: #000; /* Fondo negro para las imágenes en modo contain */
-                padding: 10px 0; /* Añade un poco de espacio arriba y abajo */
+                height: auto;
+                /* Altura automática basada en el contenido */
+                max-height: 300px;
+                /* Altura máxima para evitar que sea demasiado grande */
+                object-fit: contain;
+                /* Asegura que toda la imagen sea visible */
+                background-color: #000;
+                /* Fondo negro para las imágenes en modo contain */
+                padding: 10px 0;
+                /* Añade un poco de espacio arriba y abajo */
             }
         }
 
@@ -231,7 +245,7 @@
             background: linear-gradient(135deg, #ff416c 0%, #ff7a18 100%);
             color: #fff;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(255,75,43,0.14);
+            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.14);
             transition: transform 140ms ease, box-shadow 140ms ease;
             margin-left: 0.5rem;
             font-size: 1rem;
@@ -239,12 +253,14 @@
 
         .nav-download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255,75,43,0.18);
+            box-shadow: 0 12px 30px rgba(255, 75, 43, 0.18);
         }
 
         /* Mobile: mostrar botón en el menú móvil como enlace normal */
         @media (max-width: 768px) {
-            .nav-download-btn { display: none; }
+            .nav-download-btn {
+                display: none;
+            }
         }
 
         /* Sección de compartir enlaces */
@@ -308,6 +324,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="animated-bg"></div>
 
@@ -315,7 +332,7 @@
     <nav class="fixed top-0 left-0 w-full p-4 z-50 bg-black bg-opacity-75">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold">[ESTEV]</h1>
-            
+
             <!-- Mobile Menu Button -->
             <button class="menu-toggle md:hidden" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars text-2xl"></i>
@@ -327,8 +344,11 @@
                 <a href="#albums" class="hover:text-gray-300 transition-colors">Música</a>
                 <a href="#contact" class="hover:text-gray-300 transition-colors">Contacto</a>
                 <a href="gumroad.html" class="hover:text-gray-300 transition-colors">Tienda</a>
+                <a href="#comments" class="hover:text-gray-300 transition-colors">Comentarios</a>
                 <!-- Botón circular ligero para descarga (desktop) -->
-                <a id="navDownload" href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="nav-download-btn" aria-label="Descargar App de Estev" target="_blank" rel="noopener noreferrer">
+                <a id="navDownload" href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file"
+                    class="nav-download-btn" aria-label="Descargar App de Estev" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fas fa-download" style="font-size:16px"></i>
                 </a>
             </div>
@@ -341,7 +361,9 @@
         <a href="#albums" class="text-xl my-4" onclick="toggleMobileMenu()">Música</a>
         <a href="#contact" class="text-xl my-4" onclick="toggleMobileMenu()">Contacto</a>
         <a href="gumroad.html" class="text-xl my-4" onclick="toggleMobileMenu()">Tienda</a>
-        <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4" onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
+        <a href="#comments" class="text-xl my-4" onclick="toggleMobileMenu()">Comentarios</a>
+        <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4"
+            onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
         <button class="absolute top-4 right-4 text-2xl" onclick="toggleMobileMenu()">
             <i class="fas fa-times"></i>
         </button>
@@ -361,7 +383,9 @@
             <h2 class="text-3xl font-bold mb-6 text-center">Biografía</h2>
             <div class="max-w-3xl mx-auto text-gray-300">
                 <p class="text-lg leading-relaxed">
-                    [ESTEV] es un artista versátil de San Luis, Argentina, cuya música fusiona elementos del rock, pop y sonidos experimentales. Con más de una década de experiencia en la escena musical, ha logrado crear un estilo único que refleja tanto sus raíces culturales como su visión contemporánea de la música.
+                    [ESTEV] es un artista versátil de San Luis, Argentina, cuya música fusiona elementos del rock, pop y
+                    sonidos experimentales. Con más de una década de experiencia en la escena musical, ha logrado crear
+                    un estilo único que refleja tanto sus raíces culturales como su visión contemporánea de la música.
                 </p>
             </div>
         </section>
@@ -376,8 +400,8 @@
                     <div class="album-details">
                         <h3 class="text-xl font-bold">Boli bol</h3>
                         <p class="text-gray-400">2023 • Rock Alternativo</p>
-                        <a href="https://open.spotify.com/intl-es/album/6HqaD0umfNXVqzycwDb07C" 
-                           class="mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition-colors">
+                        <a href="https://open.spotify.com/intl-es/album/6HqaD0umfNXVqzycwDb07C"
+                            class="mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition-colors">
                             Escuchar en Spotify
                         </a>
                         <ul class="track-list mt-6">
@@ -437,7 +461,8 @@
                 <a href="https://wa.link/0k7veo" class="hover:text-gray-300 transition-colors">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://open.spotify.com/intl-es/artist/1mM7PbPuWBNfNbGxxLk2yP" class="hover:text-gray-300 transition-colors">
+                <a href="https://open.spotify.com/intl-es/artist/1mM7PbPuWBNfNbGxxLk2yP"
+                    class="hover:text-gray-300 transition-colors">
                     <i class="fab fa-spotify"></i>
                 </a>
                 <a href="https://www.youtube.com/@EstebanMansilla-v2u" class="hover:text-gray-300 transition-colors">
@@ -452,13 +477,51 @@
             <div class="share-section">
                 <h3>Comparte estos enlaces</h3>
                 <div class="share-buttons">
-                    <button type="button" class="share-btn" onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)">
+                    <button type="button" class="share-btn"
+                        onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)">
                         <i class="fas fa-download" style="margin-right:6px"></i>Copiar App (Mediafire)
                     </button>
-                    <button type="button" class="share-btn github" onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)">
+                    <button type="button" class="share-btn github"
+                        onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)">
                         <i class="fas fa-link" style="margin-right:6px"></i>Copiar Web (GitHub)
                     </button>
                 </div>
+            </div>
+
+            
+        </section>
+
+        <!-- Comments Section -->
+        <section id="comments" class="mb-20">
+            <h2 class="text-3xl font-bold mb-6 text-center">Comentarios</h2>
+            <div class="max-w-3xl mx-auto bg-gray-900 p-6 rounded-lg shadow-lg">
+                <p class="text-lg text-white text-center mb-4 font-semibold">Crear una cuenta en GitHub es muy fácil y gratis. ¡Anímate a comentar! Puedes registrarte en <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">github.com</a>.</p>
+                <div class="flex justify-center gap-4 mb-4">
+                    <!-- Botón con logo de GitHub -->
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded flex items-center gap-2">
+                        <i class="fab fa-github text-xl"></i> Ir a GitHub
+                    </a>
+                    <!-- Botón para copiar enlace -->
+                    <button onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-2">
+                        <i class="fas fa-copy text-xl"></i> Copiar enlace
+                    </button>
+                </div>
+                <!-- Giscus Comment System -->
+                <script src="https://giscus.app/client.js"
+                        data-repo="estebanfedericomansilla/Estev"
+                        data-repo-id="R_kgDOOEwtJg"
+                        data-category="General"
+                        data-category-id="DIC_kwDOOEwtJs4CyFDP"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="bottom"
+                        data-theme="preferred_color_scheme"
+                        data-lang="es"
+                        crossorigin="anonymous"
+                        async>
+                </script>
             </div>
         </section>
     </main>
@@ -486,19 +549,19 @@
 
     <script>
         // Función para copiar al portapapeles (reutilizada de gumroad.html)
-        async function copyToClipboard(text, btn){
+        async function copyToClipboard(text, btn) {
             const original = btn.textContent;
-            try{
-                if(navigator.clipboard && navigator.clipboard.writeText){
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
                     await navigator.clipboard.writeText(text);
                     btn.textContent = '✓ Copiado';
-                    setTimeout(()=> btn.textContent = original, 1600);
+                    setTimeout(() => btn.textContent = original, 1600);
                     return;
                 }
-            }catch(e){ }
+            } catch (e) { }
 
             // Fallback: usar textarea temporal + execCommand('copy')
-            try{
+            try {
                 const ta = document.createElement('textarea');
                 ta.value = text;
                 ta.style.position = 'fixed';
@@ -508,16 +571,16 @@
                 ta.select();
                 const ok = document.execCommand('copy');
                 document.body.removeChild(ta);
-                if(ok){
+                if (ok) {
                     btn.textContent = '✓ Copiado';
-                    setTimeout(()=> btn.textContent = original, 1600);
+                    setTimeout(() => btn.textContent = original, 1600);
                     return;
                 }
-            }catch(e){ }
+            } catch (e) { }
 
             // Último recurso: mostrar prompt con el enlace para copiar manualmente
-            try{ prompt('Copia este enlace y pégalo:', text); }
-            catch(e){ window.open(text, '_blank'); }
+            try { prompt('Copia este enlace y pégalo:', text); }
+            catch (e) { window.open(text, '_blank'); }
             btn.textContent = original;
         }
 
@@ -539,7 +602,7 @@
             }
             currentTrackElement = element;
             element.classList.add('playing');
-            
+
             audio.src = `Disco Boli Bol mp4/${filename}`;
             audio.play();
             player.style.display = 'flex';
@@ -595,6 +658,6 @@
         });
     </script>
 </body>
+
 </html>
 </qodoArtifact>
-
