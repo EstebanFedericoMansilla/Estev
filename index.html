@@ -133,6 +133,28 @@
             }
         }
 
+        /* Móviles en horizontal: mostrar la tapa completa aunque haya barras negras */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .album-image {
+                height: auto;
+                max-height: 70vh;
+                object-fit: contain;
+                background-color: #000;
+                padding: 10px 0;
+            }
+        }
+
+        /* Escritorio y pantallas grandes: mostrar siempre la tapa completa */
+        @media (min-width: 769px) {
+            .album-image {
+                height: auto;
+                max-height: 70vh;
+                object-fit: contain;
+                background-color: #000;
+                padding: 10px 0;
+            }
+        }
+
         .album-card:hover .album-image {
             filter: grayscale(0%);
         }
@@ -343,7 +365,7 @@
         .tienda-section .album { background:#0f0f0f; border:1px solid #1f1f1f; padding:14px; border-radius:10px; margin-bottom:14px; display:flex; gap:12px; align-items:flex-start; width:100%; overflow:hidden }
         .tienda-section .album > div { flex:1; min-width:0 }
         .tienda-section .album h3 { margin:0 0 6px 0 }
-        .tienda-section .cover { width:96px; height:96px; object-fit:cover; border-radius:8px; flex:0 0 96px }
+        .tienda-section .cover { width:96px; height:96px; object-fit:contain; border-radius:8px; flex:0 0 96px }
         .tienda-section .links { display:flex; gap:8px; align-items:center; flex-wrap:wrap }
         .tienda-section .buy { background:linear-gradient(90deg,#ff416c,#ff7a18); color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600 }
         .tienda-section .copy-btn { background:#1f2937; border:0; color:#fff; padding:8px 10px; border-radius:8px; cursor:pointer; font-size:14px }
