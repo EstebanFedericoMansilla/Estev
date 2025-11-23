@@ -807,6 +807,19 @@
             try{
                 const sp = document.getElementById('samplePlayer');
                 if(!sp){ return; }
+
+                // Pausar reproductor principal (biografía) si está sonando
+                try{
+                    if (audio && !audio.paused) {
+                        audio.pause();
+                        updatePlayerUI();
+                    }
+                    if (currentTrackElement) {
+                        currentTrackElement.classList.remove('playing');
+                        currentTrackElement = null;
+                    }
+                }catch(_){ }
+
                 if(tiendaActiveBtn && tiendaActiveBtn !== btn) tiendaActiveBtn.textContent = 'Play';
                 const same = sp.src && sp.src.endsWith(encodeURI(src));
                 if(same && !sp.paused){ sp.pause(); btn.textContent = 'Play'; return; }
@@ -841,10 +854,23 @@
             audio.play();
             player.style.display = 'flex';
             updatePlayerUI();
+
+            // Pausar reproductor de muestras de tienda si estuviera sonando
+            try{
+                const sp = document.getElementById('samplePlayer');
+                if (sp && !sp.paused) { sp.pause(); }
+                if (tiendaActiveBtn) { tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; }
+            }catch(_){ }
         }
 
         function togglePlay() {
             if (audio.paused) {
+                // Al iniciar reproducción del reproductor principal, pausar muestras de tienda
+                try{
+                    const sp = document.getElementById('samplePlayer');
+                    if (sp && !sp.paused) { sp.pause(); }
+                    if (tiendaActiveBtn) { tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; }
+                }catch(_){ }
                 audio.play();
             } else {
                 audio.pause();
