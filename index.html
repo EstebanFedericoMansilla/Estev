@@ -657,6 +657,39 @@
             });
         });
     </script>
+
+    <!-- Visitor Counter -->
+    <div class="text-center py-4 text-gray-400 text-sm">
+        <p>Esta página ha sido visitada:</p>
+        <div id="contador-visitas">
+            <span id="contador-numero">cargando...</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-2">Contador de visitas por <a href="https://www.contadorvisitasgratis.com" target="_blank" class="text-blue-400 hover:underline">contadorvisitasgratis.com</a></p>
+    </div>
+
+    <script>
+    // Solo cargar el contador si es la primera visita en esta sesión
+    if (!sessionStorage.getItem('visitaContada')) {
+        // Cargar el contador
+        const script = document.createElement('script');
+        script.src = "https://counter1.optistats.ovh/private/counter.js?c=23uwt7u3dyax7um6r7wg2tlcmt795q38&down=async";
+        script.async = true;
+        script.onload = function() {
+            // Mostrar el contador
+            document.getElementById('contador-visitas').innerHTML = 
+                '<div id="sfc23uwt7u3dyax7um6r7wg2tlcmt795q38"></div>';
+        };
+        document.body.appendChild(script);
+        
+        // Marcar que ya contamos esta visita
+        sessionStorage.setItem('visitaContada', 'true');
+    } else {
+        // Si ya contamos la visita, mostrar el contador sin incrementar
+        document.getElementById('contador-visitas').innerHTML = 
+            '<div id="sfc23uwt7u3dyax7um6r7wg2tlcmt795q38"></div>' +
+            '<script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=23uwt7u3dyax7um6r7wg2tlcmt795q38&down=async" async><\/script>';
+    }
+    </script>
 </body>
 
 </html>
