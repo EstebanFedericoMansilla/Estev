@@ -122,6 +122,17 @@
             }
         }
 
+        /* Móviles en vertical con anchos comunes (hasta 768px): evita recortes */
+        @media (max-width: 768px) and (orientation: portrait) {
+            .album-image {
+                height: auto;
+                max-height: 70vh;
+                object-fit: contain;
+                background-color: #000;
+                padding: 10px 0;
+            }
+        }
+
         .album-card:hover .album-image {
             filter: grayscale(0%);
         }
@@ -322,6 +333,39 @@
                 width: 100%;
             }
         }
+
+        /* Estilos para la sección de tienda y elementos internos (desde gumroad.html) */
+        .tienda-section { display: none; padding: 2rem 0; }
+        .tienda-section.active { display: block; }
+        .tienda-section .container { max-width:980px; margin:0 auto; padding:14px; width:100% }
+        .tienda-section header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px }
+        .tienda-section a.logo { color:#fff; text-decoration:none; font-weight:700 }
+        .tienda-section .album { background:#0f0f0f; border:1px solid #1f1f1f; padding:14px; border-radius:10px; margin-bottom:14px; display:flex; gap:12px; align-items:flex-start; width:100%; overflow:hidden }
+        .tienda-section .album > div { flex:1; min-width:0 }
+        .tienda-section .album h3 { margin:0 0 6px 0 }
+        .tienda-section .cover { width:96px; height:96px; object-fit:cover; border-radius:8px; flex:0 0 96px }
+        .tienda-section .links { display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+        .tienda-section .buy { background:linear-gradient(90deg,#ff416c,#ff7a18); color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600 }
+        .tienda-section .copy-btn { background:#1f2937; border:0; color:#fff; padding:8px 10px; border-radius:8px; cursor:pointer; font-size:14px }
+        .tienda-section .sample-btn { background:#222; border:0; color:#fff; padding:6px 8px; border-radius:6px; cursor:pointer }
+        .tienda-section .track { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-top:1px solid #151515 }
+        .tienda-section .note { color:#ccc; font-size:14px; margin-top:8px }
+        .tienda-section footer { color:#888; margin-top:26px; font-size:13px }
+        .tienda-section .small { font-size:13px; color:#bbb }
+        .tienda-section .gift { margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+        .tienda-section .gift .gift-btn { background:#0b84ff; color:#fff; padding:6px 10px; border-radius:6px; text-decoration:none; font-weight:600 }
+        .tienda-section .gift strong { color:#ffd; margin-right:6px }
+        .tienda-section .share-section { margin-top:24px; padding-top:16px; border-top:1px solid #222; text-align:center }
+        .tienda-section .share-section h4 { font-size:14px; margin-bottom:12px; color:#bbb }
+        .tienda-section .share-buttons { display:flex; gap:8px; justify-content:center; flex-wrap:wrap }
+        .tienda-section .share-buttons button { background:linear-gradient(135deg,#0084ff,#0055dd); color:#fff; padding:6px 10px; border:0; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px; transition:transform 140ms ease }
+        .tienda-section .share-buttons button:hover { transform:translateY(-2px) }
+        .tienda-section .share-buttons button.github { background:linear-gradient(135deg,#333,#1a1a1f) }
+        /* Ajuste para móviles en vertical: replicar comportamiento de gumroad.html */
+        @media (max-width: 600px) and (orientation: portrait) {
+            .tienda-section .album { flex-direction: column; align-items: stretch; }
+            .tienda-section .cover { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; flex: 0 0 auto; display: block; }
+        }
     </style>
 </head>
 
@@ -343,7 +387,7 @@
                 <a href="#bio" class="hover:text-gray-300 transition-colors">Biografía</a>
                 <a href="#albums" class="hover:text-gray-300 transition-colors">Música</a>
                 <a href="#contact" class="hover:text-gray-300 transition-colors">Contacto</a>
-                <a href="gumroad.html" class="hover:text-gray-300 transition-colors">Tienda</a>
+                <a href="#tienda" class="hover:text-gray-300 transition-colors tienda-link">Tienda</a>
                 <a href="#comments" class="hover:text-gray-300 transition-colors">Comentarios</a>
                 <!-- Botón circular ligero para descarga (desktop) -->
                 <a id="navDownload" href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file"
@@ -360,7 +404,7 @@
         <a href="#bio" class="text-xl my-4" onclick="toggleMobileMenu()">Biografía</a>
         <a href="#albums" class="text-xl my-4" onclick="toggleMobileMenu()">Música</a>
         <a href="#contact" class="text-xl my-4" onclick="toggleMobileMenu()">Contacto</a>
-        <a href="gumroad.html" class="text-xl my-4" onclick="toggleMobileMenu()">Tienda</a>
+        <a href="#tienda" class="text-xl my-4 tienda-link">Tienda</a>
         <a href="#comments" class="text-xl my-4" onclick="toggleMobileMenu()">Comentarios</a>
         <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4"
             onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
@@ -448,6 +492,164 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Tienda Section -->
+        <section id="tienda" class="tienda-section">
+            <div class="container">
+                <h1 style="margin-top:0">Comprar discos portables</h1>
+                <p class="note">Enlaces a Gumroad. Abre en una nueva pestaña. Debajo tienes botones de muestra (si hay archivos disponibles en el sitio).</p>
+
+                <!-- Plandemiados -->
+                <section class="album">
+                    <img class="cover" src="Tapa%20del%20CD%20Plandemiados.jpg" alt="Plandemiados">
+                    <div>
+                        <h3>Plandemiados — Disco portable</h3>
+                        <div class="links">
+                            <a class="buy" id="link-hnzvy" href="https://estebanmansilla.gumroad.com/l/hnzvy" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/hnzvy', this)">Copiar enlace</button>
+                            <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
+                            <span class="small">(Gumroad)</span>
+                        </div>
+                        <div class="gift">
+                            <strong>Regalo!</strong>
+                            <a class="gift-btn" href="https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file', this)">Copiar enlace</button>
+                            <div class="small">Descarga el single demo sin comprar el disco completo.</div>
+                        </div>
+                        <div class="linkbox" style="display:none;margin-top:8px">
+                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/hnzvy" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                        </div>
+                        <div class="note">Muestras no incluidas en la página.</div>
+                    </div>
+                </section>
+
+                <!-- Guitar percussion -->
+                <section class="album">
+                    <img class="cover" src="Tapa%20del%20CD%20Guitar%20percussion.jpg" alt="Guitar percussion">
+                    <div>
+                        <h3>Guitar percussion — Disco portable</h3>
+                        <div class="links">
+                            <a class="buy" id="link-dahimb" href="https://estebanmansilla.gumroad.com/l/dahimb" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/dahimb', this)">Copiar enlace</button>
+                            <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
+                            <span class="small">(Gumroad)</span>
+                        </div>
+                        <div class="gift">
+                            <strong>Regalo!</strong>
+                            <a class="gift-btn" href="https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file', this)">Copiar enlace</button>
+                            <div class="small">Descarga el single demo sin comprar el disco completo.</div>
+                        </div>
+                        <div class="linkbox" style="display:none;margin-top:8px">
+                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/dahimb" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                        </div>
+                        <div class="note">Muestras no incluidas en la página.</div>
+                    </div>
+                </section>
+
+                <!-- Plandemia -->
+                <section class="album">
+                    <img class="cover" src="Portada%20del%20disco%20Plandemia.jpg" alt="Plandemia">
+                    <div>
+                        <h3>Plandemia — Disco portable</h3>
+                        <div class="links">
+                            <a class="buy" id="link-pjoko" href="https://estebanmansilla.gumroad.com/l/pjoko" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/pjoko', this)">Copiar enlace</button>
+                            <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
+                            <span class="small">(Gumroad)</span>
+                        </div>
+                        <div class="gift">
+                            <strong>Regalo!</strong>
+                            <a class="gift-btn" href="https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file', this)">Copiar enlace</button>
+                            <div class="small">Descarga el single demo sin comprar el disco completo.</div>
+                        </div>
+                        <div class="linkbox" style="display:none;margin-top:8px">
+                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/pjoko" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                        </div>
+                        <div class="note">Muestras no incluidas en la página.</div>
+                    </div>
+                </section>
+
+                <!-- El deseo -->
+                <section class="album">
+                    <img class="cover" src="Tapa%20de%20disco%20el%20Deseo%20para%20Fresh%20tunes.jpg" alt="El deseo">
+                    <div>
+                        <h3>El deseo — Disco portable</h3>
+                        <div class="links">
+                            <a class="buy" id="link-ppkwh" href="https://estebanmansilla.gumroad.com/l/ppkwh" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/ppkwh', this)">Copiar enlace</button>
+                            <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
+                            <span class="small">(Gumroad)</span>
+                        </div>
+                        <div class="gift">
+                            <strong>Regalo!</strong>
+                            <a class="gift-btn" href="https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file', this)">Copiar enlace</button>
+                            <div class="small">Descarga el single demo sin comprar el disco completo.</div>
+                        </div>
+                        <div class="linkbox" style="display:none;margin-top:8px">
+                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/ppkwh" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                        </div>
+                        <div class="note">Muestras no incluidas en la página.</div>
+                    </div>
+                </section>
+
+                <!-- Boli Bol (con muestras) -->
+                <section class="album">
+                    <img class="cover" src="Tapa%20de%20Cd%20para%20Spotify%20Boli%20bol.jpg" alt="Boli Bol">
+                    <div>
+                        <h3>Boli Bol — Disco portable</h3>
+                        <div class="links">
+                            <a class="buy" id="link-jtcmh" href="https://estebanmansilla.gumroad.com/l/jtcmh" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/jtcmh', this)">Copiar enlace</button>
+                            <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
+                            <span class="small">(Gumroad)</span>
+                        </div>
+                        <div class="gift">
+                            <strong>Regalo!</strong>
+                            <a class="gift-btn" href="https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file', this)">Copiar enlace</button>
+                            <div class="small">Descarga el single demo sin comprar el disco completo.</div>
+                        </div>
+                        <div class="linkbox" style="display:none;margin-top:8px">
+                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/jtcmh" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                        </div>
+
+                        <div style="margin-top:8px">
+                            <div class="track">
+                                <div>Boli bol</div>
+                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Boli bol .mp4', this)">Play</button></div>
+                            </div>
+                            <div class="track">
+                                <div>Escucho un rock</div>
+                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Escucho un rock .mp4', this)">Play</button></div>
+                            </div>
+                            <div class="track">
+                                <div>Macamequi</div>
+                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Macamequi.mp4', this)">Play</button></div>
+                            </div>
+                            <div class="track">
+                                <div>Mister Mario</div>
+                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Mister Mario .mp4', this)">Play</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <audio id="samplePlayer" preload="metadata"></audio>
+                <footer>
+                    <div class="small">Página ligera — enlaces directos a Gumroad.</div>
+                    <div class="share-section">
+                        <h4>Comparte estos enlaces</h4>
+                        <div class="share-buttons">
+                            <button type="button" onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)"><i class="fas fa-download" style="margin-right:6px"></i>Copiar App</button>
+                            <button type="button" class="github" onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)"><i class="fas fa-link" style="margin-right:6px"></i>Copiar Web</button>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </section>
 
@@ -584,6 +786,38 @@
             btn.textContent = original;
         }
 
+        // Mostrar/ocultar campo con la URL dentro de cada álbum (tienda)
+        function toggleUrlField(btn){
+            const album = btn.closest('.album');
+            if(!album) return;
+            const box = album.querySelector('.linkbox');
+            if(!box) return;
+            const input = box.querySelector('.urlfield');
+            if(box.style.display === 'none' || box.style.display === ''){
+                box.style.display = 'block';
+                if(input){ input.focus(); input.select(); }
+            } else {
+                box.style.display = 'none';
+            }
+        }
+
+        // Reproductor de muestras de la tienda (<audio id="samplePlayer">)
+        let tiendaActiveBtn = null;
+        function playSample(src, btn){
+            try{
+                const sp = document.getElementById('samplePlayer');
+                if(!sp){ return; }
+                if(tiendaActiveBtn && tiendaActiveBtn !== btn) tiendaActiveBtn.textContent = 'Play';
+                const same = sp.src && sp.src.endsWith(encodeURI(src));
+                if(same && !sp.paused){ sp.pause(); btn.textContent = 'Play'; return; }
+                sp.src = src;
+                sp.play().catch(()=>{});
+                tiendaActiveBtn = btn;
+                btn.textContent = 'Pause';
+                sp.onended = ()=>{ if(tiendaActiveBtn){ tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; } };
+            }catch(e){}
+        }
+
         // Mobile menu functionality
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
@@ -656,7 +890,55 @@
                 document.getElementById('mobileMenu').classList.remove('active');
             });
         });
+
+        // Tienda: mostrar solo cuando se presiona "Tienda" y ocultar en el resto
+        document.addEventListener('DOMContentLoaded', () => {
+            const tiendaSection = document.getElementById('tienda');
+            const allSections = Array.from(document.querySelectorAll('main > section'));
+            function showTienda(){
+                if(!tiendaSection) return;
+                tiendaSection.classList.add('active');
+                // ocultar todas las demás secciones
+                allSections.forEach(sec => {
+                    if(sec !== tiendaSection){ sec.style.display = 'none'; }
+                });
+                // asegurar que tienda sea visible
+                tiendaSection.style.display = '';
+            }
+            function hideTienda(){
+                if(!tiendaSection) return;
+                tiendaSection.classList.remove('active');
+                // restaurar visibilidad de las demás secciones
+                allSections.forEach(sec => { sec.style.display = ''; });
+            }
+
+            // Enlaces de Tienda (desktop y móvil)
+            document.querySelectorAll('.tienda-link').forEach(a => {
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showTienda();
+                    location.hash = '#tienda';
+                    setTimeout(() => tiendaSection.scrollIntoView({ behavior: 'smooth' }), 50);
+                });
+            });
+
+            // Cualquier otro enlace del menú oculta la tienda
+            document.querySelectorAll('.desktop-menu a:not(.tienda-link), .mobile-menu a:not(.tienda-link)').forEach(a => {
+                a.addEventListener('click', () => hideTienda());
+            });
+
+            // Sincronizar con el hash al cargar y en cambios de hash
+            function syncHash(){ if(location.hash === '#tienda'){ showTienda(); } else { hideTienda(); } }
+            syncHash();
+            window.addEventListener('hashchange', syncHash);
+        });
     </script>
+
+    <style>
+        /* Ajustes visuales de la tienda embebida (respetando el estilo de gumroad) */
+        .tienda-section .album h3 { margin: 0 0 6px 0; font-weight: 700; line-height: 1.25; }
+        .tienda-section .album { align-items: flex-start; }
+    </style>
 
     <!-- Visitor Counter -->
     <div class="text-center py-4 text-gray-400 text-sm">
