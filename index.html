@@ -357,36 +357,219 @@
         }
 
         /* Estilos para la sección de tienda y elementos internos (desde gumroad.html) */
-        .tienda-section { display: none; padding: 2rem 0; }
-        .tienda-section.active { display: block; }
-        .tienda-section .container { max-width:980px; margin:0 auto; padding:14px; width:100% }
-        .tienda-section header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px }
-        .tienda-section a.logo { color:#fff; text-decoration:none; font-weight:700 }
-        .tienda-section .album { background:#0f0f0f; border:1px solid #1f1f1f; padding:14px; border-radius:10px; margin-bottom:14px; display:flex; gap:12px; align-items:flex-start; width:100%; overflow:hidden }
-        .tienda-section .album > div { flex:1; min-width:0 }
-        .tienda-section .album h3 { margin:0 0 6px 0 }
-        .tienda-section .cover { width:96px; height:96px; object-fit:contain; border-radius:8px; flex:0 0 96px }
-        .tienda-section .links { display:flex; gap:8px; align-items:center; flex-wrap:wrap }
-        .tienda-section .buy { background:linear-gradient(90deg,#ff416c,#ff7a18); color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600 }
-        .tienda-section .copy-btn { background:#1f2937; border:0; color:#fff; padding:8px 10px; border-radius:8px; cursor:pointer; font-size:14px }
-        .tienda-section .sample-btn { background:#222; border:0; color:#fff; padding:6px 8px; border-radius:6px; cursor:pointer }
-        .tienda-section .track { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-top:1px solid #151515 }
-        .tienda-section .note { color:#ccc; font-size:14px; margin-top:8px }
-        .tienda-section footer { color:#888; margin-top:26px; font-size:13px }
-        .tienda-section .small { font-size:13px; color:#bbb }
-        .tienda-section .gift { margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
-        .tienda-section .gift .gift-btn { background:#0b84ff; color:#fff; padding:6px 10px; border-radius:6px; text-decoration:none; font-weight:600 }
-        .tienda-section .gift strong { color:#ffd; margin-right:6px }
-        .tienda-section .share-section { margin-top:24px; padding-top:16px; border-top:1px solid #222; text-align:center }
-        .tienda-section .share-section h4 { font-size:14px; margin-bottom:12px; color:#bbb }
-        .tienda-section .share-buttons { display:flex; gap:8px; justify-content:center; flex-wrap:wrap }
-        .tienda-section .share-buttons button { background:linear-gradient(135deg,#0084ff,#0055dd); color:#fff; padding:6px 10px; border:0; border-radius:6px; cursor:pointer; font-weight:600; font-size:13px; transition:transform 140ms ease }
-        .tienda-section .share-buttons button:hover { transform:translateY(-2px) }
-        .tienda-section .share-buttons button.github { background:linear-gradient(135deg,#333,#1a1a1f) }
+        .tienda-section {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .tienda-section.active {
+            display: block;
+        }
+
+        .tienda-section .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 14px;
+            width: 100%
+        }
+
+        .tienda-section header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px
+        }
+
+        .tienda-section a.logo {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        .tienda-section .album {
+            background: #0f0f0f;
+            border: 1px solid #1f1f1f;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .tienda-section .album>div {
+            flex: 1;
+            min-width: 0
+        }
+
+        .tienda-section .album h3 {
+            margin: 0 0 6px 0
+        }
+
+        .tienda-section .cover {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex: 0 0 96px
+        }
+
+        .tienda-section .links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .tienda-section .buy {
+            background: linear-gradient(90deg, #ff416c, #ff7a18);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .tienda-section .copy-btn {
+            background: #1f2937;
+            border: 0;
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px
+        }
+
+        .tienda-section .sample-btn {
+            background: #222;
+            border: 0;
+            color: #fff;
+            padding: 6px 8px;
+            border-radius: 6px;
+            cursor: pointer
+        }
+
+        .tienda-section .track {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-top: 1px solid #151515
+        }
+
+        .tienda-section .note {
+            color: #ccc;
+            font-size: 14px;
+            margin-top: 8px
+        }
+
+        .tienda-section footer {
+            color: #888;
+            margin-top: 26px;
+            font-size: 13px
+        }
+
+        .tienda-section .small {
+            font-size: 13px;
+            color: #bbb
+        }
+
+        .tienda-section .gift {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .tienda-section .gift .gift-btn {
+            background: #0b84ff;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .tienda-section .gift strong {
+            color: #ffd;
+            margin-right: 6px
+        }
+
+        .tienda-section .share-section {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #222;
+            text-align: center
+        }
+
+        .tienda-section .share-section h4 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #bbb
+        }
+
+        .tienda-section .share-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .tienda-section .share-buttons button {
+            background: linear-gradient(135deg, #0084ff, #0055dd);
+            color: #fff;
+            padding: 6px 10px;
+            border: 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: transform 140ms ease
+        }
+
+        .tienda-section .share-buttons button:hover {
+            transform: translateY(-2px)
+        }
+
+        .tienda-section .share-buttons button.github {
+            background: linear-gradient(135deg, #333, #1a1a1f)
+        }
+
         /* Ajuste para móviles en vertical: replicar comportamiento de gumroad.html */
         @media (max-width: 600px) and (orientation: portrait) {
-            .tienda-section .album { flex-direction: column; align-items: stretch; }
-            .tienda-section .cover { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; flex: 0 0 auto; display: block; }
+            .tienda-section .album {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .tienda-section .cover {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1;
+                object-fit: cover;
+                flex: 0 0 auto;
+                display: block;
+            }
+        }
+
+        /* Estilos para la sección tutorial */
+        .tutorial-section {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .tutorial-section.active {
+            display: block;
+        }
+
+        .tutorial-section iframe {
+            width: 100%;
+            min-height: 100vh;
+            border: none;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -410,6 +593,7 @@
                 <a href="#albums" class="hover:text-gray-300 transition-colors">Música</a>
                 <a href="#contact" class="hover:text-gray-300 transition-colors">Contacto</a>
                 <a href="#tienda" class="hover:text-gray-300 transition-colors tienda-link">Tienda</a>
+                <a href="#tutorial" class="hover:text-gray-300 transition-colors tutorial-link">Tutorial</a>
                 <a href="#comments" class="hover:text-gray-300 transition-colors">Comentarios</a>
                 <!-- Botón circular ligero para descarga (desktop) -->
                 <a id="navDownload" href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file"
@@ -427,6 +611,7 @@
         <a href="#albums" class="text-xl my-4" onclick="toggleMobileMenu()">Música</a>
         <a href="#contact" class="text-xl my-4" onclick="toggleMobileMenu()">Contacto</a>
         <a href="#tienda" class="text-xl my-4 tienda-link">Tienda</a>
+        <a href="#tutorial" class="text-xl my-4 tutorial-link">Tutorial</a>
         <a href="#comments" class="text-xl my-4" onclick="toggleMobileMenu()">Comentarios</a>
         <a href="https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file" class="text-xl my-4"
             onclick="toggleMobileMenu()" target="_blank" rel="noopener noreferrer">Descargar App</a>
@@ -521,7 +706,8 @@
         <section id="tienda" class="tienda-section">
             <div class="container">
                 <h1 style="margin-top:0">Comprar discos portables</h1>
-                <p class="note">Enlaces a Gumroad. Abre en una nueva pestaña. Debajo tienes botones de muestra (si hay archivos disponibles en el sitio).</p>
+                <p class="note">Enlaces a Gumroad. Abre en una nueva pestaña. Debajo tienes botones de muestra (si hay
+                    archivos disponibles en el sitio).</p>
 
                 <!-- Plandemiados -->
                 <section class="album">
@@ -529,19 +715,28 @@
                     <div>
                         <h3>Plandemiados — Disco portable</h3>
                         <div class="links">
-                            <a class="buy" id="link-hnzvy" href="https://estebanmansilla.gumroad.com/l/hnzvy" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/hnzvy', this)">Copiar enlace</button>
+                            <a class="buy" id="link-hnzvy" href="https://estebanmansilla.gumroad.com/l/hnzvy"
+                                target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/hnzvy', this)">Copiar
+                                enlace</button>
                             <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
                             <span class="small">(Gumroad)</span>
                         </div>
                         <div class="gift">
                             <strong>Regalo!</strong>
-                            <a class="gift-btn" href="https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file', this)">Copiar enlace</button>
+                            <a class="gift-btn"
+                                href="https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file"
+                                target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/ir55ot7fh3yhtod/Plandemiados_Disco_portable_demo.rar/file', this)">Copiar
+                                enlace</button>
                             <div class="small">Descarga el single demo sin comprar el disco completo.</div>
                         </div>
                         <div class="linkbox" style="display:none;margin-top:8px">
-                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/hnzvy" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                            <input class="urlfield" type="text" readonly
+                                value="https://estebanmansilla.gumroad.com/l/hnzvy"
+                                style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
                         </div>
                         <div class="note">Muestras no incluidas en la página.</div>
                     </div>
@@ -553,19 +748,28 @@
                     <div>
                         <h3>Guitar percussion — Disco portable</h3>
                         <div class="links">
-                            <a class="buy" id="link-dahimb" href="https://estebanmansilla.gumroad.com/l/dahimb" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/dahimb', this)">Copiar enlace</button>
+                            <a class="buy" id="link-dahimb" href="https://estebanmansilla.gumroad.com/l/dahimb"
+                                target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/dahimb', this)">Copiar
+                                enlace</button>
                             <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
                             <span class="small">(Gumroad)</span>
                         </div>
                         <div class="gift">
                             <strong>Regalo!</strong>
-                            <a class="gift-btn" href="https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file', this)">Copiar enlace</button>
+                            <a class="gift-btn"
+                                href="https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file"
+                                target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/adjixdcl72fez83/Guitar_percussion__Disco_portable_demo.rar/file', this)">Copiar
+                                enlace</button>
                             <div class="small">Descarga el single demo sin comprar el disco completo.</div>
                         </div>
                         <div class="linkbox" style="display:none;margin-top:8px">
-                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/dahimb" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                            <input class="urlfield" type="text" readonly
+                                value="https://estebanmansilla.gumroad.com/l/dahimb"
+                                style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
                         </div>
                         <div class="note">Muestras no incluidas en la página.</div>
                     </div>
@@ -577,19 +781,28 @@
                     <div>
                         <h3>Plandemia — Disco portable</h3>
                         <div class="links">
-                            <a class="buy" id="link-pjoko" href="https://estebanmansilla.gumroad.com/l/pjoko" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/pjoko', this)">Copiar enlace</button>
+                            <a class="buy" id="link-pjoko" href="https://estebanmansilla.gumroad.com/l/pjoko"
+                                target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/pjoko', this)">Copiar
+                                enlace</button>
                             <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
                             <span class="small">(Gumroad)</span>
                         </div>
                         <div class="gift">
                             <strong>Regalo!</strong>
-                            <a class="gift-btn" href="https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file', this)">Copiar enlace</button>
+                            <a class="gift-btn"
+                                href="https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file"
+                                target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/08s9ao7v0nkpc98/Plandemia_Disco_portable_demo_de_4_temas.rar/file', this)">Copiar
+                                enlace</button>
                             <div class="small">Descarga el single demo sin comprar el disco completo.</div>
                         </div>
                         <div class="linkbox" style="display:none;margin-top:8px">
-                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/pjoko" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                            <input class="urlfield" type="text" readonly
+                                value="https://estebanmansilla.gumroad.com/l/pjoko"
+                                style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
                         </div>
                         <div class="note">Muestras no incluidas en la página.</div>
                     </div>
@@ -601,19 +814,28 @@
                     <div>
                         <h3>El deseo — Disco portable</h3>
                         <div class="links">
-                            <a class="buy" id="link-ppkwh" href="https://estebanmansilla.gumroad.com/l/ppkwh" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/ppkwh', this)">Copiar enlace</button>
+                            <a class="buy" id="link-ppkwh" href="https://estebanmansilla.gumroad.com/l/ppkwh"
+                                target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/ppkwh', this)">Copiar
+                                enlace</button>
                             <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
                             <span class="small">(Gumroad)</span>
                         </div>
                         <div class="gift">
                             <strong>Regalo!</strong>
-                            <a class="gift-btn" href="https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file', this)">Copiar enlace</button>
+                            <a class="gift-btn"
+                                href="https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file"
+                                target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/1ae6k1gmo3ca948/El_deseo_Disco_demo_de_dos_temas.rar/file', this)">Copiar
+                                enlace</button>
                             <div class="small">Descarga el single demo sin comprar el disco completo.</div>
                         </div>
                         <div class="linkbox" style="display:none;margin-top:8px">
-                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/ppkwh" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                            <input class="urlfield" type="text" readonly
+                                value="https://estebanmansilla.gumroad.com/l/ppkwh"
+                                style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
                         </div>
                         <div class="note">Muestras no incluidas en la página.</div>
                     </div>
@@ -625,37 +847,54 @@
                     <div>
                         <h3>Boli Bol — Disco portable</h3>
                         <div class="links">
-                            <a class="buy" id="link-jtcmh" href="https://estebanmansilla.gumroad.com/l/jtcmh" target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/jtcmh', this)">Copiar enlace</button>
+                            <a class="buy" id="link-jtcmh" href="https://estebanmansilla.gumroad.com/l/jtcmh"
+                                target="_blank" rel="noopener noreferrer">Comprar en Gumroad</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://estebanmansilla.gumroad.com/l/jtcmh', this)">Copiar
+                                enlace</button>
                             <button type="button" class="copy-btn" onclick="toggleUrlField(this)">Ver enlace</button>
                             <span class="small">(Gumroad)</span>
                         </div>
                         <div class="gift">
                             <strong>Regalo!</strong>
-                            <a class="gift-btn" href="https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file" target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
-                            <button type="button" class="copy-btn" onclick="copyToClipboard('https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file', this)">Copiar enlace</button>
+                            <a class="gift-btn"
+                                href="https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file"
+                                target="_blank" rel="noopener noreferrer">Descargar single (demo)</a>
+                            <button type="button" class="copy-btn"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/1333nb2wzwng2xl/Boli_Bol_Disco_portable.rar/file', this)">Copiar
+                                enlace</button>
                             <div class="small">Descarga el single demo sin comprar el disco completo.</div>
                         </div>
                         <div class="linkbox" style="display:none;margin-top:8px">
-                            <input class="urlfield" type="text" readonly value="https://estebanmansilla.gumroad.com/l/jtcmh" style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
+                            <input class="urlfield" type="text" readonly
+                                value="https://estebanmansilla.gumroad.com/l/jtcmh"
+                                style="width:100%;padding:8px;border-radius:6px;border:1px solid #222;background:#0b0b0b;color:#fff">
                         </div>
 
                         <div style="margin-top:8px">
                             <div class="track">
                                 <div>Boli bol</div>
-                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Boli bol .mp4', this)">Play</button></div>
+                                <div><button class="sample-btn"
+                                        onclick="playSample('Disco Boli Bol mp4/Boli bol .mp4', this)">Play</button>
+                                </div>
                             </div>
                             <div class="track">
                                 <div>Escucho un rock</div>
-                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Escucho un rock .mp4', this)">Play</button></div>
+                                <div><button class="sample-btn"
+                                        onclick="playSample('Disco Boli Bol mp4/Escucho un rock .mp4', this)">Play</button>
+                                </div>
                             </div>
                             <div class="track">
                                 <div>Macamequi</div>
-                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Macamequi.mp4', this)">Play</button></div>
+                                <div><button class="sample-btn"
+                                        onclick="playSample('Disco Boli Bol mp4/Macamequi.mp4', this)">Play</button>
+                                </div>
                             </div>
                             <div class="track">
                                 <div>Mister Mario</div>
-                                <div><button class="sample-btn" onclick="playSample('Disco Boli Bol mp4/Mister Mario .mp4', this)">Play</button></div>
+                                <div><button class="sample-btn"
+                                        onclick="playSample('Disco Boli Bol mp4/Mister Mario .mp4', this)">Play</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -667,11 +906,21 @@
                     <div class="share-section">
                         <h4>Comparte estos enlaces</h4>
                         <div class="share-buttons">
-                            <button type="button" onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)"><i class="fas fa-download" style="margin-right:6px"></i>Copiar App</button>
-                            <button type="button" class="github" onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)"><i class="fas fa-link" style="margin-right:6px"></i>Copiar Web</button>
+                            <button type="button"
+                                onclick="copyToClipboard('https://www.mediafire.com/file/fm2jucvruit6a4c/Estev.apk/file', this)"><i
+                                    class="fas fa-download" style="margin-right:6px"></i>Copiar App</button>
+                            <button type="button" class="github"
+                                onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)"><i
+                                    class="fas fa-link" style="margin-right:6px"></i>Copiar Web</button>
                         </div>
                     </div>
                 </footer>
+            </div>
+        </section>
+        <!-- Tutorial Section -->
+        <section id="tutorial" class="tutorial-section">
+            <div class="container" style="max-width: 100%; padding: 0;">
+                <iframe src="tutorial_imagenes.html" title="Tutorial de Imágenes"></iframe>
             </div>
         </section>
 
@@ -711,41 +960,43 @@
                     </button>
                 </div>
             </div>
-
-            
         </section>
 
         <!-- Comments Section -->
         <section id="comments" class="mb-20">
             <h2 class="text-3xl font-bold mb-6 text-center">Comentarios</h2>
             <div class="max-w-3xl mx-auto bg-gray-900 p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-white text-center mb-4 font-semibold">Crear una cuenta en GitHub es muy fácil y gratis. ¡Anímate a comentar! Puedes registrarte en <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 underline">github.com</a>.</p>
-                <div class="flex justify-center gap-4 mb-4">
-                    <!-- Botón con logo de GitHub -->
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded flex items-center gap-2">
+                <p class="text-lg text-white text-center mb-4 font-semibold">Crear una cuenta en GitHub es muy fácil y
+                    gratis. ¡Anímate a comentar! Puedes registrarte en <a href="https://github.com" target="_blank"
+                        rel="noopener noreferrer" class="text-blue-400 underline">github.com</a>.</p>
+
+                <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                        class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded flex items-center gap-2">
                         <i class="fab fa-github text-xl"></i> Ir a GitHub
                     </a>
-                    <!-- Botón para copiar enlace -->
-                    <button onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-2">
+                    <button onclick="copyToClipboard('https://estebanfedericomansilla.github.io/Estev/', this)"
+                        class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded flex items-center gap-2">
                         <i class="fas fa-copy text-xl"></i> Copiar enlace
                     </button>
                 </div>
+
+                <!-- Botón Tutorial de Imágenes -->
+                <div class="text-center mb-4">
+                    <p class="text-white mb-2">¿Quieres compartir imágenes en los comentarios?</p>
+                    <a href="#tutorial"
+                        class="tutorial-link inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-6 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-camera text-xl"></i> Ver Tutorial Paso a Paso
+                    </a>
+                </div>
+
                 <!-- Giscus Comment System -->
-                <script src="https://giscus.app/client.js"
-                        data-repo="estebanfedericomansilla/Estev"
-                        data-repo-id="R_kgDOOEwtJg"
-                        data-category="General"
-                        data-category-id="DIC_kwDOOEwtJs4CyFDP"
-                        data-mapping="pathname"
-                        data-strict="0"
-                        data-reactions-enabled="1"
-                        data-emit-metadata="0"
-                        data-input-position="bottom"
-                        data-theme="preferred_color_scheme"
-                        data-lang="es"
-                        crossorigin="anonymous"
-                        async>
-                </script>
+                <script src="https://giscus.app/client.js" data-repo="estebanfedericomansilla/Estev"
+                    data-repo-id="R_kgDOOEwtJg" data-category="General" data-category-id="DIC_kwDOOEwtJs4CyFDP"
+                    data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
+                    data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="es"
+                    crossorigin="anonymous" async>
+                    </script>
             </div>
         </section>
     </main>
@@ -809,15 +1060,15 @@
         }
 
         // Mostrar/ocultar campo con la URL dentro de cada álbum (tienda)
-        function toggleUrlField(btn){
+        function toggleUrlField(btn) {
             const album = btn.closest('.album');
-            if(!album) return;
+            if (!album) return;
             const box = album.querySelector('.linkbox');
-            if(!box) return;
+            if (!box) return;
             const input = box.querySelector('.urlfield');
-            if(box.style.display === 'none' || box.style.display === ''){
+            if (box.style.display === 'none' || box.style.display === '') {
                 box.style.display = 'block';
-                if(input){ input.focus(); input.select(); }
+                if (input) { input.focus(); input.select(); }
             } else {
                 box.style.display = 'none';
             }
@@ -825,13 +1076,13 @@
 
         // Reproductor de muestras de la tienda (<audio id="samplePlayer">)
         let tiendaActiveBtn = null;
-        function playSample(src, btn){
-            try{
+        function playSample(src, btn) {
+            try {
                 const sp = document.getElementById('samplePlayer');
-                if(!sp){ return; }
+                if (!sp) { return; }
 
                 // Pausar reproductor principal (biografía) si está sonando
-                try{
+                try {
                     if (audio && !audio.paused) {
                         audio.pause();
                         updatePlayerUI();
@@ -840,17 +1091,17 @@
                         currentTrackElement.classList.remove('playing');
                         currentTrackElement = null;
                     }
-                }catch(_){ }
+                } catch (_) { }
 
-                if(tiendaActiveBtn && tiendaActiveBtn !== btn) tiendaActiveBtn.textContent = 'Play';
+                if (tiendaActiveBtn && tiendaActiveBtn !== btn) tiendaActiveBtn.textContent = 'Play';
                 const same = sp.src && sp.src.endsWith(encodeURI(src));
-                if(same && !sp.paused){ sp.pause(); btn.textContent = 'Play'; return; }
+                if (same && !sp.paused) { sp.pause(); btn.textContent = 'Play'; return; }
                 sp.src = src;
-                sp.play().catch(()=>{});
+                sp.play().catch(() => { });
                 tiendaActiveBtn = btn;
                 btn.textContent = 'Pause';
-                sp.onended = ()=>{ if(tiendaActiveBtn){ tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; } };
-            }catch(e){}
+                sp.onended = () => { if (tiendaActiveBtn) { tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; } };
+            } catch (e) { }
         }
 
         // Mobile menu functionality
@@ -878,21 +1129,21 @@
             updatePlayerUI();
 
             // Pausar reproductor de muestras de tienda si estuviera sonando
-            try{
+            try {
                 const sp = document.getElementById('samplePlayer');
                 if (sp && !sp.paused) { sp.pause(); }
                 if (tiendaActiveBtn) { tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; }
-            }catch(_){ }
+            } catch (_) { }
         }
 
         function togglePlay() {
             if (audio.paused) {
                 // Al iniciar reproducción del reproductor principal, pausar muestras de tienda
-                try{
+                try {
                     const sp = document.getElementById('samplePlayer');
                     if (sp && !sp.paused) { sp.pause(); }
                     if (tiendaActiveBtn) { tiendaActiveBtn.textContent = 'Play'; tiendaActiveBtn = null; }
-                }catch(_){ }
+                } catch (_) { }
                 audio.play();
             } else {
                 audio.pause();
@@ -943,18 +1194,19 @@
         document.addEventListener('DOMContentLoaded', () => {
             const tiendaSection = document.getElementById('tienda');
             const allSections = Array.from(document.querySelectorAll('main > section'));
-            function showTienda(){
-                if(!tiendaSection) return;
+
+            function showTienda() {
+                if (!tiendaSection) return;
                 tiendaSection.classList.add('active');
                 // ocultar todas las demás secciones
                 allSections.forEach(sec => {
-                    if(sec !== tiendaSection){ sec.style.display = 'none'; }
+                    if (sec !== tiendaSection) { sec.style.display = 'none'; }
                 });
                 // asegurar que tienda sea visible
                 tiendaSection.style.display = '';
             }
-            function hideTienda(){
-                if(!tiendaSection) return;
+            function hideTienda() {
+                if (!tiendaSection) return;
                 tiendaSection.classList.remove('active');
                 // restaurar visibilidad de las demás secciones
                 allSections.forEach(sec => { sec.style.display = ''; });
@@ -975,8 +1227,53 @@
                 a.addEventListener('click', () => hideTienda());
             });
 
+            // Tutorial Logic
+            const tutorialSection = document.getElementById('tutorial');
+            function showTutorial() {
+                if (!tutorialSection) return;
+                tutorialSection.classList.add('active');
+                allSections.forEach(sec => {
+                    if (sec !== tutorialSection) { sec.style.display = 'none'; }
+                });
+                tutorialSection.style.display = '';
+            }
+
+            // Handle Tutorial Links
+            document.querySelectorAll('.tutorial-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showTutorial();
+                    location.hash = '#tutorial';
+                    setTimeout(() => tutorialSection.scrollIntoView({ behavior: 'smooth' }), 50);
+                    document.getElementById('mobileMenu')?.classList.remove('active');
+                });
+            });
+
             // Sincronizar con el hash al cargar y en cambios de hash
-            function syncHash(){ if(location.hash === '#tienda'){ showTienda(); } else { hideTienda(); } }
+            function syncHash() {
+                if (location.hash === '#tienda') {
+                    showTienda();
+                } else if (location.hash === '#tutorial') {
+                    showTutorial();
+                } else {
+                    // Default view: hide special sections, show normal sections
+                    if (tiendaSection) {
+                        tiendaSection.classList.remove('active');
+                        tiendaSection.style.display = 'none';
+                    }
+                    if (tutorialSection) {
+                        tutorialSection.classList.remove('active');
+                        tutorialSection.style.display = 'none';
+                    }
+                    // Show all other sections
+                    allSections.forEach(sec => {
+                        if (sec !== tiendaSection && sec !== tutorialSection) {
+                            sec.style.display = '';
+                        }
+                    });
+                }
+            }
+
             syncHash();
             window.addEventListener('hashchange', syncHash);
         });
@@ -984,23 +1281,33 @@
 
     <style>
         /* Ajustes visuales de la tienda embebida (respetando el estilo de gumroad) */
-        .tienda-section .album h3 { margin: 0 0 6px 0; font-weight: 700; line-height: 1.25; }
-        .tienda-section .album { align-items: flex-start; }
+        .tienda-section .album h3 {
+            margin: 0 0 6px 0;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .tienda-section .album {
+            align-items: flex-start;
+        }
     </style>
 
     <!-- Visitor Counter -->
     <div class="text-center py-4 text-gray-400 text-sm">
         <p>Esta página ha sido visitada:</p>
         <div id="sfc23uwt7u3dyax7um6r7wg2tlcmt795q38"></div>
-        <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=23uwt7u3dyax7um6r7wg2tlcmt795q38&down=async" async></script>
+        <script type="text/javascript"
+            src="https://counter1.optistats.ovh/private/counter.js?c=23uwt7u3dyax7um6r7wg2tlcmt795q38&down=async"
+            async></script>
         <noscript>
             <a href="https://www.contadorvisitasgratis.com" title="contador de visitas web">
-                <img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=23uwt7u3dyax7um6r7wg2tlcmt795q38" border="0" title="contador de visitas web" alt="contador de visitas web">
+                <img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=23uwt7u3dyax7um6r7wg2tlcmt795q38"
+                    border="0" title="contador de visitas web" alt="contador de visitas web">
             </a>
         </noscript>
-        <p class="text-xs text-gray-500 mt-2">Contador de visitas por <a href="https://www.contadorvisitasgratis.com" target="_blank" class="text-blue-400 hover:underline">contadorvisitasgratis.com</a></p>
+        <p class="text-xs text-gray-500 mt-2">Contador de visitas por <a href="https://www.contadorvisitasgratis.com"
+                target="_blank" class="text-blue-400 hover:underline">contadorvisitasgratis.com</a></p>
     </div>
 </body>
 
 </html>
-</qodoArtifact>
