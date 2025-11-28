@@ -13,6 +13,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -292,7 +296,7 @@
             <p>Guía paso a paso para compartir imágenes en las webs</p>
         </div>
 
-        <div class="content">
+        <div class="content" id="inicio-tutorial">
             <div class="intro">
                 <i class="fas fa-info-circle"></i>
                 <strong>¿Qué aprenderás en este tutorial?</strong>
@@ -376,9 +380,9 @@
             </div>
 
             <div style="text-align: center;">
-                <a href="index.html" class="btn-home">
+                <a href="#inicio-tutorial" class="btn-home" title="Volver al inicio del tutorial">
                     <i class="fas fa-home"></i>
-                    Volver a la Página Principal
+                    Volver al inicio del tutorial
                 </a>
             </div>
         </div>
